@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE PROCEDURE AddBook (
+    IN p_Title VARCHAR(255),
+    IN p_AuthorID INT,
+    IN p_Genre VARCHAR(100),
+    IN p_Price DECIMAL(10, 2),
+    IN p_PublishDate DATE
+)
+BEGIN
+    INSERT INTO Books (Title, AuthorID, Genre, Price, PublishDate)
+    VALUES (p_Title, p_AuthorID, p_Genre, p_Price, p_PublishDate);
+END //
+
+DELIMITER ;
