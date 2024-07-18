@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE PROCEDURE CalculateAuthorSales (
+    IN p_AuthorID INT,
+    OUT p_TotalSales DECIMAL(10, 2)
+)
+BEGIN
+    SELECT SUM(od.Quantity * b.Price)
+    INTO p_TotalSales
+    FROM OrderDetails od
+    JOIN Books b ON od.BookID = b.BookID
+    WHERE b.AuthorID = p_AuthorID;
+END //
+
+DELIMITER ;
