@@ -1,0 +1,10 @@
+User Roles and Privileges:
+-- Create a user with limited privileges
+CREATE USER 'bookstore_user'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, UPDATE ON BookstoreDB.* TO 'bookstore_user'@'localhost';
+
+
+Data Encryption:
+Ensure sensitive data is encrypted at rest and in transit.
+-- Example: Encrypt email addresses using MySQL's built-in functions
+UPDATE Customers SET Email = AES_ENCRYPT(Email, 'encryption_key');
