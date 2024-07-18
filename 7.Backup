@@ -1,0 +1,10 @@
+Automated Backups:
+Schedule regular backups using cron jobs on a Linux system.
+bash
+# Cron job for daily backups at midnight
+0 0 * * * /usr/bin/mysqldump -u root -pYourPassword BookstoreDB > /path/to/backup/BookstoreDB_$(date +\%F).sql
+
+Manual Backup:
+Perform manual backups using the mysqldump command.
+bash
+mysqldump -u root -pYourPassword BookstoreDB > /path/to/backup/BookstoreDB.sql
