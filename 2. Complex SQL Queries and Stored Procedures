@@ -1,0 +1,4 @@
+SELECT b.Title, b.Genre, b.Price
+FROM Books b
+JOIN Authors a ON b.AuthorID = a.AuthorID
+WHERE a.LastName = 'Smith';
